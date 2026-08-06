@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Costilla de Cerdo",
+    "precio": 15000,
+    "descripcion": "Costilla fresca de excelente calidad.",
+    "imagen": "assets/productos/Costilla.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Carne de Cerdo",
+    "precio": 14000,
+    "descripcion": "Carne fresca de excelente calidad.",
+    "imagen": "assets/productos/Carne.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Chuleta de Cerdo",
+    "precio": 14000,
+    "descripcion": "Chuleta fresca lista para asar.",
+    "imagen": "assets/productos/Chuleta.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Chorizos Artesanales",
+    "precio": 13000,
+    "descripcion": "Paquete por 4 unidades.",
+    "imagen": "assets/productos/Chorizos.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Carne Molida",
+    "precio": 15000,
+    "descripcion": "Ideal para hamburguesas.",
+    "imagen": "assets/productos/Molida.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Combo Familiar",
+    "precio": 52000,
+    "descripcion": "Costilla + Carne + Chuleta + Chorizos.",
+    "imagen": "assets/productos/Combo.png"
+  }
+]

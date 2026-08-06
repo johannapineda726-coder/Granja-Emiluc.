@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Granja Emiluc</title>
+
+    <meta name="description"
+          content="Productos cárnicos de excelente calidad">
+
+    <meta name="theme-color"
+          content="#198754">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Hoja de estilos -->
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+    <!-- Manifest PWA -->
+
+    <link rel="manifest"
+          href="manifest.json">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- MENÚ PRINCIPAL -->
+<!-- ========================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
+
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center"
+           href="#">
+
+            <img src="assets/logo.jpeg"
+                 width="55"
+                 class="me-3"
+                 alt="Logo Granja Emiluc">
+
+            <strong>Granja Emiluc</strong>
+
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       href="#">
+
+                        Inicio
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#productos">
+
+                        Productos
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#contacto">
+
+                        Contacto
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ========================= -->
+<!-- BANNER -->
+<!-- ========================= -->
+
+<header class="hero py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1 class="display-4 fw-bold">
+
+                    Productos Frescos
+
+                </h1>
+
+                <h3 class="mb-4">
+
+                    Calidad que se siente,
+                    sabor que une.
+
+                </h3>
+
+                <p class="lead">
+
+                    Costilla de cerdo,
+                    carne de cerdo,
+                    chuletas,
+                    carne molida,
+                    chorizos artesanales
+                    y deliciosos combos familiares.
+
+                </p>
+
+                <a href="#productos"
+                   class="btn btn-danger btn-lg">
+
+                    Ver Productos
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="assets/productos/Combo.png"
+                     class="img-fluid rounded shadow"
+                     alt="Combo Familiar">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ========================= -->
+<!-- PRODUCTOS -->
+<!-- ========================= -->
+
+<section id="productos"
+         class="container py-5">
+
+    <h2 class="text-center mb-5">
+
+        Nuestros Productos
+
+    </h2>
+
+    <!-- Buscador -->
+
+    <div class="row mb-5">
+
+        <div class="col-lg-6 mx-auto">
+
+            <input
+
+                type="text"
+
+                id="buscarProducto"
+
+                class="form-control form-control-lg"
+
+                placeholder="🔍 Buscar productos...">
+
+        </div>
+
+    </div>
+
+    <!-- Lista de productos -->
+
+    <div id="listaProductos"
+         class="row g-4">
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CARRITO FLOTANTE -->
+<!-- ========================= -->
+
+<div class="carrito"
+
+     onclick="abrirCarrito()">
+
+    🛒
+
+    <div id="cantidadCarrito">
+
+        0
+
+    </div>
+
+    <strong id="totalCarrito">
+
+        $0
+
+    </strong>
+
+</div>
+<!-- ========================= -->
+<!-- PANEL LATERAL DEL CARRITO -->
+<!-- ========================= -->
+
+<div id="panelCarrito" class="panel-carrito">
+
+    <div class="panel-header d-flex justify-content-between align-items-center">
+
+        <h3 class="m-0">
+
+            🛒 Mi Pedido
+
+        </h3>
+
+        <button
+            class="btn btn-danger btn-sm"
+            onclick="cerrarCarrito()">
+
+            ✕
+
+        </button>
+
+    </div>
+
+    <hr>
+
+    <!-- Productos del carrito -->
+
+    <div id="detalleCarrito">
+
+    </div>
+
+    <hr>
+
+    <!-- Total -->
+
+    <h4
+        id="granTotal"
+        class="text-success text-center fw-bold">
+
+        TOTAL: $0
+
+    </h4>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- DATOS DEL CLIENTE -->
+    <!-- ========================= -->
+
+    <h5 class="mb-3">
+
+        Datos para el pedido
+
+    </h5>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+
+            Nombre
+
+        </label>
+
+        <input
+            type="text"
+            id="clienteNombre"
+            class="form-control"
+            placeholder="Nombre completo">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+
+            Celular
+
+        </label>
+
+        <input
+            type="tel"
+            id="clienteTelefono"
+            class="form-control"
+            placeholder="3001234567">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+
+            Dirección
+
+        </label>
+
+        <input
+            type="text"
+            id="clienteDireccion"
+            class="form-control"
+            placeholder="Dirección de entrega">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+
+            Barrio
+
+        </label>
+
+        <input
+            type="text"
+            id="clienteBarrio"
+            class="form-control"
+            placeholder="Barrio">
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+
+            Observaciones
+
+        </label>
+
+        <textarea
+            id="clienteObservaciones"
+            rows="3"
+            class="form-control"
+            placeholder="Ejemplo: sin sal, entregar después de las 5 pm"></textarea>
+
+    </div>
+
+    <!-- Botón -->
+
+    <button
+        class="btn btn-success btn-lg w-100"
+        onclick="enviarWhatsApp()">
+
+        📲 Enviar Pedido por WhatsApp
+
+    </button>
+
+</div>
+
+<!-- ========================= -->
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<!-- ========================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/573505182091"
+    target="_blank"
+    title="Escríbenos por WhatsApp">
+
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        width="60"
+        alt="WhatsApp">
+
+</a>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer
+    id="contacto"
+    class="bg-success text-white mt-5">
+
+    <div class="container py-5 text-center">
+
+        <img
+            src="assets/logo.jpeg"
+            width="90"
+            class="mb-3"
+            alt="Logo Granja Emiluc">
+
+        <h3>
+
+            Granja Emiluc
+
+        </h3>
+
+        <p>
+
+            Productos cárnicos frescos de la mejor calidad.
+
+        </p>
+
+        <h5>
+
+            📞 WhatsApp: 350 518 2091
+
+        </h5>
+
+        <p>
+
+            Horario de atención
+
+            <br>
+
+            Lunes a Domingo
+
+            <br>
+
+            7:00 a.m. - 7:00 p.m.
+
+        </p>
+
+        <hr>
+
+        <small>
+
+            © 2026 Granja Emiluc
+
+            <br>
+
+            Todos los derechos reservados.
+
+        </small>
+
+    </div>
+
+</footer>
+
+<!-- ========================= -->
+<!-- SCRIPTS -->
+<!-- ========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="app.js"></script>
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("./service-worker.js")
+
+            .then(() => {
+
+                console.log("✅ PWA registrada correctamente.");
+
+            })
+
+            .catch(error => {
+
+                console.error("Error registrando la PWA:", error);
+
+            });
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>
