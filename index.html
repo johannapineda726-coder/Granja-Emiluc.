@@ -157,9 +157,10 @@
 
             <div class="col-lg-6 text-center">
 
-                <img src="assets/productos/Combo.png"
-                     class="img-fluid rounded shadow"
-                     alt="Combo Familiar">
+              <img 
+             src="./assets/hero-emiluc.png"
+             class="hero-imagen"
+             alt="Granja Emiluc - Productos frescos">
 
             </div>
 
@@ -238,166 +239,195 @@
 <!-- PANEL LATERAL DEL CARRITO -->
 <!-- ========================= -->
 
+<!-- ========================================= -->
+<!-- PANEL DEL CARRITO -->
+<!-- ========================================= -->
+
 <div id="panelCarrito" class="panel-carrito">
 
-    <div class="panel-header d-flex justify-content-between align-items-center">
+    <!-- CABECERA -->
 
-        <h3 class="m-0">
+    <div class="panel-header">
 
-            🛒 Mi Pedido
-
-        </h3>
+        <h3>🛒 Mi Pedido</h3>
 
         <button
-            class="btn btn-danger btn-sm"
+            type="button"
             onclick="cerrarCarrito()">
 
-            ✕
+            ✖
 
         </button>
 
     </div>
 
-    <hr>
 
-    <!-- Productos del carrito -->
+    <!-- DETALLE DEL CARRITO -->
 
     <div id="detalleCarrito">
 
     </div>
 
+
     <hr>
 
-    <!-- Total -->
+
+    <!-- TOTAL -->
 
     <h4
         id="granTotal"
-        class="text-success text-center fw-bold">
+        class="text-end">
 
         TOTAL: $0
 
     </h4>
 
-    <hr>
 
-    <!-- ========================= -->
+    <!-- ===================================== -->
     <!-- DATOS DEL CLIENTE -->
-    <!-- ========================= -->
+    <!-- ===================================== -->
 
-    <h5 class="mb-3">
+    <div class="datos-cliente mt-4">
 
-        Datos para el pedido
+        <h4 class="mb-3">
 
-    </h5>
+            📋 Datos de entrega
 
-    <div class="mb-3">
+        </h4>
 
-        <label class="form-label">
 
-            Nombre
+        <!-- NOMBRE -->
 
-        </label>
+        <div class="mb-3">
 
-        <input
-            type="text"
-            id="clienteNombre"
-            class="form-control"
-            placeholder="Nombre completo">
+            <label
+                for="clienteNombre"
+                class="form-label">
+
+                Nombre completo *
+
+            </label>
+
+            <input
+                type="text"
+                id="clienteNombre"
+                class="form-control"
+                placeholder="Ej. Juan Pérez">
+
+        </div>
+
+
+        <!-- TELÉFONO -->
+
+        <div class="mb-3">
+
+            <label
+                for="clienteTelefono"
+                class="form-label">
+
+                Teléfono *
+
+            </label>
+
+            <input
+                type="tel"
+                id="clienteTelefono"
+                class="form-control"
+                placeholder="Ej. 3001234567">
+
+        </div>
+
+
+        <!-- DIRECCIÓN -->
+
+        <div class="mb-3">
+
+            <label
+                for="clienteDireccion"
+                class="form-label">
+
+                Dirección de entrega *
+
+            </label>
+
+            <input
+                type="text"
+                id="clienteDireccion"
+                class="form-control"
+                placeholder="Ej. Calle 10 # 20-30">
+
+        </div>
+
+
+        <!-- BARRIO -->
+
+        <div class="mb-3">
+
+            <label
+                for="clienteBarrio"
+                class="form-label">
+
+                Barrio / Vereda *
+
+            </label>
+
+            <input
+                type="text"
+                id="clienteBarrio"
+                class="form-control"
+                placeholder="Ej. Centro">
+
+        </div>
+
+
+        <!-- OBSERVACIONES -->
+
+        <div class="mb-3">
+
+            <label
+                for="clienteObservaciones"
+                class="form-label">
+
+                Observaciones
+
+            </label>
+
+            <textarea
+                id="clienteObservaciones"
+                class="form-control"
+                rows="3"
+                placeholder="Ej. Entregar después de las 5:00 p.m.">
+            </textarea>
+
+        </div>
 
     </div>
 
-    <div class="mb-3">
 
-        <label class="form-label">
-
-            Celular
-
-        </label>
-
-        <input
-            type="tel"
-            id="clienteTelefono"
-            class="form-control"
-            placeholder="3001234567">
-
-    </div>
-
-    <div class="mb-3">
-
-        <label class="form-label">
-
-            Dirección
-
-        </label>
-
-        <input
-            type="text"
-            id="clienteDireccion"
-            class="form-control"
-            placeholder="Dirección de entrega">
-
-    </div>
-
-    <div class="mb-3">
-
-        <label class="form-label">
-
-            Barrio
-
-        </label>
-
-        <input
-            type="text"
-            id="clienteBarrio"
-            class="form-control"
-            placeholder="Barrio">
-
-    </div>
-
-    <div class="mb-3">
-
-        <label class="form-label">
-
-            Observaciones
-
-        </label>
-
-        <textarea
-            id="clienteObservaciones"
-            rows="3"
-            class="form-control"
-            placeholder="Ejemplo: sin sal, entregar después de las 5 pm"></textarea>
-
-    </div>
-
-    <!-- Botón -->
+    <!-- ===================================== -->
+    <!-- BOTÓN WHATSAPP -->
+    <!-- ===================================== -->
 
     <button
-        class="btn btn-success btn-lg w-100"
+        type="button"
+        class="btn btn-success w-100 mt-3"
         onclick="enviarWhatsApp()">
 
-        📲 Enviar Pedido por WhatsApp
+        📲 Revisar y enviar pedido
+
+    </button>
+
+
+    <button
+        type="button"
+        class="btn btn-outline-secondary w-100 mt-2"
+        onclick="cerrarCarrito()">
+
+        Seguir comprando
 
     </button>
 
 </div>
-
-<!-- ========================= -->
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<!-- ========================= -->
-
-<a
-    class="whatsapp"
-    href="https://wa.me/573505182091"
-    target="_blank"
-    title="Escríbenos por WhatsApp">
-
-    <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        width="60"
-        alt="WhatsApp">
-
-</a>
 
 <!-- ========================= -->
 <!-- FOOTER -->
@@ -477,7 +507,7 @@ if ("serviceWorker" in navigator) {
 
     window.addEventListener("load", () => {
 
-        navigator.serviceWorker.register("./service-worker.js")
+        navigator.serviceWorker.register("./service.worker.js")
 
             .then(() => {
 
